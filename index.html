@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Video and Audio</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.js"></script>
+    <script src="js/mediaelement-and-player.min.js"></script>
+    <link href="css/mediaelementplayer.css" rel="stylesheet">
+    <script src="skip-back/skip-back.min.js"></script>
+    <script src="skip-back/skip-back-i18n.js"></script>
+    <link href="skip-back/skip-back.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>HTML Video and Audio</h1>
+    
+    <div class="wrapper">
+      
+      <h2>Video Example</h2>
+      
+      <div class="videoWrapper">
+        <video width=800px height=450px controls autoplay muted>
+          <source src="video/video.mp4" type="video/mp4">
+          <source src="video/video.ogg" type="video/ogg">
+          <track label="English" kind="subtitles" srclang="en" src="captions.vtt" default>
+        </video>
+      </div>
+    <div class="text">  
+          <p id="p1"> Now that we've looked at the architecture
+                of the internet, let's see how you might </p>
+          <p id="p2"> connect your personal devices to
+                the internet inside your house.</p>
+          <p id="p3">Well there are many ways to
+                connect to the internet, and </p>
+          <p id="p4"> most often people connect wirelessly. </p>
+          
+          <p id="p5"> Let's look at an example of how
+                you can connect to the internet. </p>
+          <p id="p6"> If you live in a city or a town,
+                you probably have a coaxial cable for  </p>
+          <p id="p7"> cable Internet, or a phone line if you
+                have DSL, running to the outside of   </p>
+          <p id="p8"> your house, that connects you to
+                the Internet Service Provider, or ISP. </p>
+          <p id="p9"> If you live far out in the country,
+                you'll more likely have </p>
+          <p id="p10"> a dish outside your house, connecting
+                you wirelessly to your closest ISP, or </p>
+          <p id="p11"> you might also use the telephone system.  </p>
+          
+          <p id="p12"> Whether a wire comes straight from
+                the ISP hookup outside your house, or</p>
+          <p id="p13"> it travels over radio
+                waves from your roof,</p>
+          <p id="p14">  the first stop a wire will make once
+                inside your house, is at your modem.</p>
+          <p id="p15">  A modem is what connects the internet
+                to your network at home.</p>
+          <p id="p16"> A few common residential modems are DSL or  </p>
+                   
+        </div>
+          
+    </div>
+    <script>
+      $('video, audio').mediaelementplayer({
+         
+          features: ['playpause', 'current', 'progress', 'duration', 'tracks', 'volume', 'fullscreen','skipback'],
+        startLanguage: 'en',
+        skipBackInterval: 4
+      });
+        
+        
+        var vid = document.getElementsByTagName("video")[0];
+         vid.addEventListener('timeupdate', function() { 
+             var t = vid.currentTime;
+        
+//             for (i=1;i<=16; i++) {
+//                 console.log(document.getElementById('p'+i).innerHTML);
+//             }
+        
+        if (vid.currentTime>=0 && vid.currentTime<=4.13) {
+            p1=document.getElementById('p1');
+            p1.style.color="red";
+              
+        }
+         if (vid.currentTime>=4.14 && vid.currentTime<=7.535) {
+            p2=document.getElementById('p2');
+             p1.style.color="inherit";
+            p2.style.color="red";
+        }
+           if (vid.currentTime>=7.536 && vid.currentTime<=11.27) {
+            p3=document.getElementById('p3');
+             p2.style.color="inherit";
+            p3.style.color="red";
+        }
+              if (vid.currentTime>=11.271 && vid.currentTime<=13.96) {
+            p4=document.getElementById('p4');
+             p3.style.color="inherit";
+            p4.style.color="red";
+        }
+              if (vid.currentTime>=13.97 && vid.currentTime<=17.94) {
+            p5=document.getElementById('p5');
+             p4.style.color="inherit";
+            p5.style.color="red";
+        }
+             
+         })   
+//        vid.ontimeupdate = function() {myFunction()};
+
+        
+    </script>
+  </body>
+</html>
+
+
+
+
+
