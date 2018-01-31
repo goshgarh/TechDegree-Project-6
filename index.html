@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/mediaelement-and-player.min.js"></script>
     <link href="css/mediaelementplayer.css" rel="stylesheet">
     <script src="skip-back/skip-back.min.js"></script>
@@ -28,6 +28,7 @@
           <source src="video/video.mp4" type="video/mp4">
           <source src="video/video.ogg" type="video/ogg">
           <track label="English" kind="subtitles" srclang="en" src="captions.vtt" default>
+          Hoops! It looks like your browser does not support the video tag. Use latest and greates Google Chrome browser instead. 
         </video>
       </div>
     <div class="text">  
@@ -74,43 +75,30 @@
         skipBackInterval: 4
       });
         
+        var time = [0, 0.24, 4.131, 7.536, 11.271,13.961,17.941,22.371, 26.881, 32.101, 34.731, 39.431, 42.351, 46.301, 49.271, 53.761, 57.781]
         
         var vid = document.getElementsByTagName("video")[0];
          vid.addEventListener('timeupdate', function() { 
-             var t = vid.currentTime;
-        
-//             for (i=1;i<=16; i++) {
-//                 console.log(document.getElementById('p'+i).innerHTML);
-//             }
-        
-        if (vid.currentTime>=0 && vid.currentTime<=4.13) {
-            p1=document.getElementById('p1');
-            p1.style.color="red";
-              
-        }
-         if (vid.currentTime>=4.14 && vid.currentTime<=7.535) {
-            p2=document.getElementById('p2');
-             p1.style.color="inherit";
-            p2.style.color="red";
-        }
-           if (vid.currentTime>=7.536 && vid.currentTime<=11.27) {
-            p3=document.getElementById('p3');
-             p2.style.color="inherit";
-            p3.style.color="red";
-        }
-              if (vid.currentTime>=11.271 && vid.currentTime<=13.96) {
-            p4=document.getElementById('p4');
-             p3.style.color="inherit";
-            p4.style.color="red";
-        }
-              if (vid.currentTime>=13.97 && vid.currentTime<=17.94) {
-            p5=document.getElementById('p5');
-             p4.style.color="inherit";
-            p5.style.color="red";
-        }
              
-         })   
-//        vid.ontimeupdate = function() {myFunction()};
+         for (i=1;i<=16; i++) {
+            if (vid.currentTime>=time[i] && vid.currentTime<=time[i+1]) 
+            {  $('p').css({color: 'inherit', fontSize: 'inherit'});
+                $(`#${'p'+i}`).css({color:'red', fontSize: '25px'});
+            }
+                               }
+          })   
+        
+        $('.text').on('click', function(e) {
+            for (i=1;i<time.length; i++) {  
+                
+            if (e.target.id == 'p'+i) {
+                $('p').css({color: 'inherit'});
+                $(`#${'p'+i}`).css({color:'red'});
+                vid.currentTime=time[i];
+            }  }
+                       
+        }) 
+
 
         
     </script>
