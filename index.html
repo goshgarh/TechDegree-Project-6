@@ -17,14 +17,14 @@
   </head>
   <body>
 
-    <h1>HTML Video and Audio</h1>
+    <h1>Interactive Video Player</h1>
     
     <div class="wrapper">
       
-      <h2>Video Example</h2>
+      <h2>Internet Connection</h2>
       
       <div class="videoWrapper">
-        <video width=800px height=450px controls autoplay muted>
+        <video class = "video1" controls autoplay muted>
           <source src="video/video.mp4" type="video/mp4">
           <source src="video/video.ogg" type="video/ogg">
           <track label="English" kind="subtitles" srclang="en" src="captions.vtt" default>
@@ -72,15 +72,15 @@
          
           features: ['playpause', 'current', 'progress', 'duration', 'tracks', 'volume', 'fullscreen','skipback'],
         startLanguage: 'en',
-        skipBackInterval: 4
+        skipBackInterval: 3
       });
         
-        var time = [0, 0.24, 4.131, 7.536, 11.271,13.961,17.941,22.371, 26.881, 32.101, 34.731, 39.431, 42.351, 46.301, 49.271, 53.761, 57.781]
+        var time = [0, 0.24, 4.131, 7.536, 11.271,13.961,17.941,22.371, 26.881, 32.101, 34.731, 39.431, 42.351, 46.301, 49.271, 53.761, 57.781,60]
         
         var vid = document.getElementsByTagName("video")[0];
          vid.addEventListener('timeupdate', function() { 
              
-         for (i=1;i<=16; i++) {
+         for (i=1;i<=time.length; i++) {
             if (vid.currentTime>=time[i] && vid.currentTime<=time[i+1]) 
             {  $('p').css({color: 'inherit', fontSize: 'inherit'});
                 $(`#${'p'+i}`).css({color:'red', fontSize: '25px'});
@@ -89,7 +89,7 @@
           })   
         
         $('.text').on('click', function(e) {
-            for (i=1;i<time.length; i++) {  
+            for (i=1;i<=time.length; i++) {  
                 
             if (e.target.id == 'p'+i) {
                 $('p').css({color: 'inherit'});
