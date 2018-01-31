@@ -25,15 +25,16 @@ h1, h2 {
 .videoWrapper, .text {
   margin: 0 auto 50px;
   display: block;
-    width: 800px;
- }
-
 /*
-video {
     width: 820px;
     height: 400px;
-}
 */
+ }
+
+.video1 {
+    width: 800px;
+    height: 430px;
+}
 
 mejs__time-total {
     background: hsla(0,0%,100%,1);
@@ -41,5 +42,8 @@ mejs__time-total {
     width: 100%; }
 
 @media screen and (min-width: 768px) {
-    
-}
+/*
+    .videoWrapper, .text {
+      width: 750px;
+ }
+}*/
