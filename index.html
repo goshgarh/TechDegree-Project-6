@@ -32,38 +32,44 @@
         </video>
       </div>
     <div class="text">  
-          <p id="p1"> Now that we've looked at the architecture
-                of the internet, let's see how you might </p>
-          <p id="p2"> connect your personal devices to
-                the internet inside your house.</p>
-          <p id="p3">Well there are many ways to
-                connect to the internet, and </p>
-          <p id="p4"> most often people connect wirelessly. </p>
+          <p class="p"> <span id="s1">Now that we've looked at the architecture of the internet, let's see how you might</span> 
+               <span id="s2"> connect your personal devices to
+                the internet inside your house.</span>
+                 <span id="s3">Well there are many ways to
+                connect to the internet, and </span>
+          <span id="s4"> most often people connect wirelessly. </span>
+                 
+                   </p>
+         
+         <p class="p">  
+              <span id="s5"> Let's look at an example of how
+                you can connect to the internet. </span>
+          <span id="s6"> If you live in a city or a town,
+                you probably have a coaxial cable for  </span>
+          <span id="s7"> cable Internet, or a phone line if you
+                have DSL, running to the outside of   </span>
+          <span id="s8"> your house, that connects you to
+                the Internet Service Provider, or ISP. </span>
+          <span id="s9"> If you live far out in the country,
+                you'll more likely have </span>
+          <span id="s10"> a dish outside your house, connecting
+                you wirelessly to your closest ISP, or </span>
+          <span id="s11"> you might also use the telephone system.  </span>
           
-          <p id="p5"> Let's look at an example of how
-                you can connect to the internet. </p>
-          <p id="p6"> If you live in a city or a town,
-                you probably have a coaxial cable for  </p>
-          <p id="p7"> cable Internet, or a phone line if you
-                have DSL, running to the outside of   </p>
-          <p id="p8"> your house, that connects you to
-                the Internet Service Provider, or ISP. </p>
-          <p id="p9"> If you live far out in the country,
-                you'll more likely have </p>
-          <p id="p10"> a dish outside your house, connecting
-                you wirelessly to your closest ISP, or </p>
-          <p id="p11"> you might also use the telephone system.  </p>
+         
+         </p>
+          <p class="p">  
           
-          <p id="p12"> Whether a wire comes straight from
-                the ISP hookup outside your house, or</p>
-          <p id="p13"> it travels over radio
-                waves from your roof,</p>
-          <p id="p14">  the first stop a wire will make once
-                inside your house, is at your modem.</p>
-          <p id="p15">  A modem is what connects the internet
-                to your network at home.</p>
-          <p id="p16"> A few common residential modems are DSL or  </p>
-                   
+          <span id="s12"> Whether a wire comes straight from
+                the ISP hookup outside your house, or</span>
+          <span id="s13"> it travels over radio
+                waves from your roof,</span>
+          <span id="s14">  the first stop a wire will make once
+                inside your house, is at your modem.</span>
+          <span id="s15">  A modem is what connects the internet
+                to your network at home.</span>
+          <span id="s16"> A few common residential modems are DSL or  </span>
+         </p>    
         </div>
           
     </div>
@@ -82,8 +88,8 @@
              
          for (i=1;i<=time.length; i++) {
             if (vid.currentTime>=time[i] && vid.currentTime<=time[i+1]) 
-            {  $('p').css({color: 'inherit', fontSize: 'inherit'});
-                $(`#${'p'+i}`).css({color:'red', fontSize: '25px'});
+            {  $('span').css({color: 'inherit', fontSize: 'inherit'});
+                $(`#${'s'+i}`).css({color:'red', fontSize: '18px'});
             }
                                }
           })   
@@ -91,9 +97,9 @@
         $('.text').on('click', function(e) {
             for (i=1;i<=time.length; i++) {  
                 
-            if (e.target.id == 'p'+i) {
-                $('p').css({color: 'inherit'});
-                $(`#${'p'+i}`).css({color:'red'});
+            if (e.target.id == 's'+i) {
+                $('span').css({color: 'inherit'});
+                $(`#${'s'+i}`).css({color:'red'});
                 vid.currentTime=time[i];
             }  }
                        
