@@ -22,13 +22,18 @@ h1, h2 {
   text-align: center;
 }
 
+/*
+video::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  color: blue;
+}
+*/
+
 .videoWrapper, .text {
   margin: 0 auto 50px;
   display: block;
     max-width: 800px;
  }
-
-
 
 mejs__time-total {
     background: hsla(0,0%,100%,1);
