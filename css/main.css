@@ -15,6 +15,7 @@ body {
   padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
+    text-align: justify;
 }
 
 h1, h2 {
@@ -22,21 +23,22 @@ h1, h2 {
   text-align: center;
 }
 
-/*
-video::cue {
-  background-image: linear-gradient(to bottom, dimgray, lightgray);
-  color: blue;
-}
-*/
-
-.videoWrapper, .text {
-  margin: 0 auto 50px;
-  display: block;
-    max-width: 800px;
- }
 
 mejs__time-total {
     background: hsla(0,0%,100%,1);
     margin: 5px 0 0;
     width: 100%; }
+
+.mejs__controls:not([style*="display: none"]) {
+    
+    background: linear-gradient(rgba(100, 100, 200, 0.0), rgba(240, 200, 220, 0.35));
+}
+@media (min-width: 768px) {
+    .videoWrapper, .text {
+  margin: 0 auto 50px;
+  display: block;
+    max-width: 800px;
+        
+ }
+}
 
